@@ -152,6 +152,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用Hexo搭建个人博客并上传到github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/16/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github/">使用Hexo搭建个人博客并上传到github</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/16/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github/" class="archive-article-date">
+  	<time datetime="2020-04-16T11:12:02.140Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="用Hexo-搭建本地个人博客"><a href="#用Hexo-搭建本地个人博客" class="headerlink" title="用Hexo 搭建本地个人博客"></a>用Hexo 搭建本地个人博客</h1><p>1、安装Hexo</p>
+<pre><code>http://nodejs.cn/download/ </code></pre><p>2、安装git</p>
+<pre><code>https://git-scm.com/downloads</code></pre><p>3、利用git-cmd配置Hexo</p>
+<pre><code>进入git-cmd.exe界面，输入npm install -g hexo-cli</code></pre><h1 id="开始搭建博客"><a href="#开始搭建博客" class="headerlink" title="开始搭建博客"></a>开始搭建博客</h1><p>新建文件夹用来存储博客，cd进入所在目录</p>
+<p><img src="https://img-blog.csdnimg.cn/20200416172151105.png" alt="在这里插入图片描述">  </p>
+<h3 id="继续输入"><a href="#继续输入" class="headerlink" title="继续输入"></a>继续输入</h3><pre><code>hexo a blog  //生成博客的文件夹
+cd blog  //进入bolg根目录
+hexo g  //generetor的缩写
+hexo s //server的缩写</code></pre><p> 进入浏览器查看<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<p> <img src="https://img-blog.csdnimg.cn/20200416175137394.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211X3llX215,size_16,color_FFFFFF,t_70" alt=""><br> 这是hexo默认的博客主题</p>
+<h1 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h1><p>这里选择使用<strong>yilia</strong>主题</p>
+<p>1、在站点根目录输入</p>
+<pre><code>git clone https://github.com/litten/hexo-theme-yilia themes/yilia</code></pre><p><img src="https://img-blog.csdnimg.cn/20200416181238247.png" alt="在这里插入图片描述"></p>
+<p>2、更改根目录下的config文件</p>
+<pre><code>notepad _config.yml</code></pre><p>把<strong>theme:</strong> 后面的<strong>landscape</strong>改为<strong>yilia</strong><br><img src="https://img-blog.csdnimg.cn/20200416182658680.png" alt="在这里插入图片描述"></p>
+<p>3、git-cmd命令窗口下输入</p>
+<pre><code>hexo clean  //清除缓存
+hexo g  //重新生成代码
+hexo s  //部署到本地</code></pre><p>更改完成</p>
+<h1 id="将博客上传到github"><a href="#将博客上传到github" class="headerlink" title="将博客上传到github"></a>将博客上传到github</h1><p>1、打开git-bash</p>
+<pre><code>在git bash命令窗口中输入git config --global user.name &quot;xxx&quot; 
+再输入git config --global user.email &quot;xxx@xxx&quot;</code></pre><p>2、登录github建立仓库<br>    <img src="https://img-blog.csdnimg.cn/20200416181611428.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211X3llX215,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"> </p>
+<p><img src="https://img-blog.csdnimg.cn/202004161820053.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211X3llX215,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200416182220739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L211X3llX215,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>3、更改config文件的Deplyment<br><img src="https://img-blog.csdnimg.cn/2020041618432176.png" alt="在这里插入图片描述"></p>
+<p>4、下载插件</p>
+<pre><code>在git cmd命令窗口下输入npm install hexo-deployer-git --save</code></pre><p>5、输入hexo d 开始部署<br><img src="https://img-blog.csdnimg.cn/20200416185325826.png" alt="在这里插入图片描述"></p>
+<h1 id="大功告成"><a href="#大功告成" class="headerlink" title="大功告成!"></a>大功告成!</h1>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/16/%E4%BD%BF%E7%94%A8Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
